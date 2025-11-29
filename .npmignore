@@ -1,0 +1,34 @@
+# Development files
+teste_commander/
+tmp-components/
+clean-components/
+custom-dir/
+src/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp

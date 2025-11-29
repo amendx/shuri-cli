@@ -5,7 +5,7 @@
  * @returns {string} - The style template as a string.
  */
 
-const { kebabCase } = require("./string-utils.js");
+const { kebabCase } = require("../string-utils.js");
 
 
 function styleTemplate(componentName, kebabName) {

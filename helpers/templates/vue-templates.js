@@ -6,7 +6,7 @@
  * @returns {string} - The component template.
  */
 
-const { kebabCase } = require("./string-utils.js");
+const { kebabCase } = require("../string-utils.js");
 
 function vue2Template(componentName, styleFile) {
   return `<template>

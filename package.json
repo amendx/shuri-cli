@@ -9,8 +9,9 @@
   "files": [
     "bin/",
     "lib/",
+    "helpers/",
     "index.js",
-    "helpers/"
+    "README.md"
   ],
   "scripts": {
     "test": "node test/run.js",
@@ -20,10 +21,24 @@
     "cli",
     "scaffold",
     "vue",
-    "design-system"
+    "vuejs",
+    "vue3",
+    "vue2", 
+    "component",
+    "generator",
+    "design-system",
+    "template"
   ],
   "author": "amendx",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amendx/shuri-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amendx/shuri-cli/issues"
+  },
+  "homepage": "https://github.com/amendx/shuri-cli#readme",
   "engines": {
     "node": ">=18"
   },

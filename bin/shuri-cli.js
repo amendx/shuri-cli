@@ -2,7 +2,7 @@
 
 const path = require('path');
 
-const { runCli } = require('../lib/create');
+const { runCli } = require('../lib/run-cli.js');
 
 async function main(argv) {
     try {

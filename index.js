@@ -1,5 +1,5 @@
-const { runCli } = require("./lib/create");
-const { runProgrammatic } = require("./lib/programmatic");
+const { runCli } = require("./lib/run-cli");
+const { runProgrammatic } = require("./lib/run-programmatic");
 
 async function run(command, options) {
   if (options && typeof options === "object")
