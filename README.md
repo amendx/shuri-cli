@@ -58,7 +58,7 @@ Creates a complete component structure with all necessary files:
 src/components/MyButton/
 ├── index.js              # Export file for easy imports
 ├── MyButton.vue          # Vue component file
-├── MyButton.scss         # Stylesheet (css/scss/sass/less/stylus)
+├── MyButton.scss         # Stylesheet (css/scss/sass/less/styl)
 └── MyButton.unit.js      # Unit test file (.unit.js/.spec.js)
 ```
 
@@ -78,7 +78,7 @@ shuri-cli new <name> [options]
 |--------|-------------|---------|---------|
 | `--vue2` | Use Vue 2 template | Vue 3 | Forces Vue 2 syntax (options API) |
 | `--vue3` | Use Vue 3 template | ✓ | Forces Vue 3 syntax (composition API) |
-| `--style-ext <ext>` | Style extension | `scss` | `css`, `scss`, `sass`, `less`, `stylus` |
+| `--style-ext <ext>` | Style extension | `scss` | `css`, `scss`, `sass`, `less`, `styl` |
 | `--test-ext <ext>` | Test extension | `.unit.js` | `.unit.js`, `.spec.js`, `.ts` |
 | `--kebab` | Use kebab-case naming | PascalCase | Changes file/folder naming convention |
 | `--no-style` | Skip style file | includes style | Won't create style file |
@@ -139,14 +139,14 @@ src/components/UserCard/
 ```bash
 # Supports multiple preprocessors
 
-shuri-cli new UserCard --style-ext stylus
+shuri-cli new UserCard --style-ext styl
 ```
 ➡️ **Creates**:
 ```
 src/components/UserCard/
 ├── index.js
 ├── UserCard.vue
-├── UserCard.stylus
+├── UserCard.styl
 └── UserCard.unit.js
 ```
 

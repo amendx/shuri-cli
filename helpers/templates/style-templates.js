@@ -1,14 +1,11 @@
-/** Generates a basic CSS style template for a given component name.
+/**
+ * Generates a style template for a given component name
+ * supporting CSS, SCSS, and Stylus formats.
  *
- * @param {string} componentName - The name of the component (in PascalCase).
  * @param {string} kebabName - The component name in kebab-case.
  * @returns {string} - The style template as a string.
  */
-
-const { kebabCase } = require("../string-utils.js");
-
-
-function styleTemplate(componentName, kebabName) {
+function styleTemplate(kebabName) {
   return `.${kebabName} {
   display: block;
 }
