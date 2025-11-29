@@ -9,9 +9,10 @@
 const { kebabCase } = require("../string-utils.js");
 
 function vue2Template(componentName, styleFile) {
+  const lang = styleFile.split(".").pop();
+
   return `<template>
   <div class="${kebabCase(componentName)}">
-    <!-- Component content goes here -->
   </div>
 </template>
 
@@ -22,30 +23,31 @@ export default {
 };
 </script>
 
-${styleFile ? `<style src="./${styleFile}" scoped></style>` : `<style scoped>
+
+${styleFile ? `<style lang="${lang}" scoped>` : `<style scoped>`}
 /* styles */
-</style>`}
-`;
+</style>`;
 }
 
 function vue3Template(componentName, styleFile) {
   return `<template>
   <div class="${kebabCase(componentName)}">
-    <!-- Component content goes here -->
   </div>
 </template>
 
 <script setup>
-// props: defineProps({})
+defineOptions({
+  name: "${componentName}"
+})
+props: defineProps({})
 </script>
 
-${styleFile ? `<style src="./${styleFile}" scoped></style>` : `<style scoped>
+${styleFile ? `<style lang="${lang}" scoped>` : `<style scoped>`}
 /* styles */
-</style>`}
-`;
+</style>`;
 }
 
 module.exports = {
   vue2Template,
-  vue3Template
+  vue3Template,
 };
