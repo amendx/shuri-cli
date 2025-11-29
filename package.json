@@ -1,0 +1,33 @@
+{
+  "name": "shuri-cli",
+  "version": "0.0.1",
+  "description": "CLI tool to scaffold simple Vue.js design system components",
+  "main": "index.js",
+  "bin": {
+    "shuri-cli": "./bin/shuri-cli.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "index.js",
+    "helpers/"
+  ],
+  "scripts": {
+    "test": "node test/run.js",
+    "start": "node bin/shuri-cli.js"
+  },
+  "keywords": [
+    "cli",
+    "scaffold",
+    "vue",
+    "design-system"
+  ],
+  "author": "amendx",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^14.0.2"
+  }
+}
