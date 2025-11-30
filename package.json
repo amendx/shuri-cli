@@ -1,10 +1,10 @@
 {
   "name": "shuri-cli",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "description": "CLI tool to scaffold simple Vue.js design system components",
   "main": "index.js",
   "bin": {
-    "shuri-cli": "./bin/shuri-cli.js"
+    "shuri-cli": "bin/shuri-cli.js"
   },
   "files": [
     "bin/",
@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amendx/shuri-cli.git"
+    "url": "git+https://github.com/amendx/shuri-cli.git"
   },
   "bugs": {
     "url": "https://github.com/amendx/shuri-cli/issues"

@@ -1,19 +1,18 @@
 name: CI / Publish to npm
 
 on:
-  push:
-    branches:
-      - release
+  release:
+    types: [created]
   workflow_dispatch:
 
 permissions:
   contents: read
   packages: write
-  id-token: write
 
 jobs:
   test-and-publish:
     runs-on: ubuntu-latest
+    environment: publish       
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,7 +21,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          registry-url: https://registry.npmjs.org
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: Install dependencies
         run: npm ci
@@ -34,11 +33,8 @@ jobs:
         run: npm run build --if-present
 
       - name: Publish to npm
-        if: github.ref == 'refs/heads/release'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          # ensure correct registry/auth
           npm whoami || true
-          # publish (use --access public se for public package)
           npm publish --access public
