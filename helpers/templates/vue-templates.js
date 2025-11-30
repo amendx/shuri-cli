@@ -47,7 +47,15 @@ ${styleFile ? `<style lang="${lang}" scoped>` : `<style scoped>`}
 </style>`;
 }
 
+function vueTemplate(componentName, vueVersion) {
+  const generators = {
+    2: vue2Template,
+    3: vue3Template,
+  };
+
+  return (generators[vueVersion] ?? vue2Template)(componentName);
+}
+
 module.exports = {
-  vue2Template,
-  vue3Template,
+  vueTemplate,
 };

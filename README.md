@@ -76,6 +76,7 @@ shuri-cli new <name> [options]
 
 | Option | Description | Default | Details |
 |--------|-------------|---------|---------|
+| `-r, --root <root>` | Root directory name | Component name | Change the root dir name |
 | `--vue2` | Use Vue 2 template | Vue 3 | Forces Vue 2 syntax (options API) |
 | `--vue3` | Use Vue 3 template | ✓ | Forces Vue 3 syntax (composition API) |
 | `--style-ext <ext>` | Style extension | `scss` | `css`, `scss`, `sass`, `less`, `styl` |
@@ -135,7 +136,22 @@ src/components/UserCard/
 
 ```
 
-### 👩‍🎨 Component with Styles
+### 🌲 Component with root directory changed
+```bash
+shuri-cli new SuperDuperClockComponent --root clock
+```
+➡️ **Creates**:
+```
+# src/components/SuperDuperClockComponent/ ❌
+
+src/components/clock/ ✅✅✅
+├── index.js
+├── SuperDuperClockComponent.vue
+├── UsSuperDuperClockComponenterCard.styl
+└── SuperDuperClockComponent.unit.js
+```
+
+### 👩‍🎨 Component with Styles 
 ```bash
 # Supports multiple preprocessors
 
@@ -227,7 +243,8 @@ console.log(result);
 
 ```javascript
 await shuri.run(['new', 'ComponentName'], {
-  out: './custom/path',        // Output directory
+  root: 'ComponentName'       // Root folder name
+  out: './custom/path',       // Output directory
   styleExt: 'scss',           // Style extension (default: 'scss')
   testExt: '.spec.js',        // Test extension (default: '.unit.js')
   noStyle: false,             // Skip style file
@@ -251,7 +268,10 @@ await shuri.run(['new', 'ComponentName'], {
 </template>
 
 <script setup>
-// props: defineProps({})
+defineOptions({
+  name: "ComponentName"
+})
+ props: defineProps({})
 </script>
 
 <style scoped>
