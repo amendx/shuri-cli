@@ -23,7 +23,7 @@ function vue3TestTemplate(componentName, vueVersion) {
 import ${componentName} from './${componentName}.vue';
 
 describe('${componentName}', () => {
-  it('mounts', () => {
+  it('exporta um componente válido', () => {
     const wrapper = mount(${componentName});
     expect(wrapper.exists()).toBe(true);
   });

@@ -2,15 +2,13 @@
  * Generates a Vue 2 template for a component.
  *
  * @param {string} componentName - The name of the component.
- * @param {string} styleFile - The associated style file.
+ * @param {string} vueVersion - The Vue version (2 or 3).
  * @returns {string} - The component template.
  */
 
 const { kebabCase } = require("../string-utils.js");
 
-function vue2Template(componentName, styleFile) {
-  const lang = styleFile.split(".").pop();
-
+function vue2Template(componentName) {
   return `<template>
   <div class="${kebabCase(componentName)}">
   </div>
@@ -21,15 +19,10 @@ export default {
   name: '${componentName}',
   props: {}
 };
-</script>
-
-
-${styleFile ? `<style lang="${lang}" scoped>` : `<style scoped>`}
-/* styles */
-</style>`;
+</script>`;
 }
 
-function vue3Template(componentName, styleFile) {
+function vue3Template(componentName) {
   return `<template>
   <div class="${kebabCase(componentName)}">
   </div>
@@ -41,10 +34,7 @@ defineOptions({
 })
 props: defineProps({})
 </script>
-
-${styleFile ? `<style lang="${lang}" scoped>` : `<style scoped>`}
-/* styles */
-</style>`;
+`;
 }
 
 function vueTemplate(componentName, vueVersion) {
