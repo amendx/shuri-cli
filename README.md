@@ -18,6 +18,15 @@ Vue.js component generator for design systems. Scaffolds complete component stru
 
 > **Current Scope**: Vue component generation with complete structure. Future versions will support services, stores, pages, and more scaffold types.
 
+## ⚠️ Documentation System Requirements (temporary)
+
+The **automatic VuePress documentation generation** has specific requirements:
+
+- 📋 **Vue Version**: Only supports **Vue 2** projects
+- 📚 **VuePress**: Designed for **VuePress v1** compatibility
+- 🚫 **Vue 3 Limitation**: Documentation generation is automatically disabled for Vue 3 projects
+
+> **Note**: When Vue 3 is detected (auto-detected or forced with `--vue3`), documentation generation will be skipped with a warning. Use `--no-docs` to explicitly disable documentation generation.
 
 ## 💻 Installation
 
@@ -217,8 +226,10 @@ shuri-cli new UserCard --vue3 --style-ext scss
 
 Shuri CLI automatically generates **VuePress documentation** for every component:
 
+> ⚠️ **Vue 2 Only**: Documentation generation is only available for **Vue 2** projects and **VuePress v1**. Vue 3 projects will automatically skip documentation generation.
+
 ```bash
-# Generate component with full documentation
+# Generate component with full documentation (Vue 2 projects only)
 shuri-cli new UserCard --verbose
 ```
 
@@ -237,6 +248,16 @@ docs/
 ```bash
 # Create component without documentation
 shuri-cli new UserCard --no-docs
+```
+
+#### ⚠️ Vue 3 Projects
+```bash
+# Vue 3 components (documentation automatically disabled)
+shuri-cli new UserCard --vue3 --verbose
+# Output: ⚠️ Aviso: Geração de documentação não suportada para Vue 3
+
+# Vue 3 with explicit no-docs (cleaner output)
+shuri-cli new UserCard --vue3 --no-docs --verbose
 ```
 
 #### 🛡️ Backup Configuration Files
@@ -381,6 +402,8 @@ export default {
 ## 📚 Documentation System
 
 Shuri CLI integrates seamlessly with **VuePress** to generate comprehensive documentation:
+
+> ⚠️ **Important**: Documentation generation is **only available for Vue 2 projects** and requires **VuePress v1**. Vue 3 projects will automatically skip documentation generation with a warning message.
 
 ### 🎯 Generated Files
 - **Component Docs**: Markdown files with usage examples and props documentation
