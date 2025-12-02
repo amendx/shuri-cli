@@ -37,7 +37,7 @@ props: defineProps({})
 `;
 }
 
-function vueTemplate(componentName, vueVersion) {
+function getVueTemplate(componentName, vueVersion) {
   const generators = {
     2: vue2Template,
     3: vue3Template,
@@ -47,5 +47,5 @@ function vueTemplate(componentName, vueVersion) {
 }
 
 module.exports = {
-  vueTemplate,
+  getVueTemplate
 };
