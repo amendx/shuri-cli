@@ -1,6 +1,6 @@
 {
   "name": "shuri-cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "CLI tool to scaffold simple Vue.js design system components",
   "main": "index.js",
   "bin": {
